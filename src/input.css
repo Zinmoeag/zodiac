@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root{
+    --transparent : transparent;
+  }
+
+}
+
+.appear{
+	opacity: 0;
+	animation: appear-animation 3s forwards;
+	animation-delay: 2s;
+}
+
+@keyframes appear-animation{
+	100%{
+		opacity: 1;
+	}
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#hero{
+	background-image: url("/assets/images/background/Galaxy.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#sharmal{
+	background-image: url("/assets/images/background/sharmal.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.dancing-script{
+	font-family: 'Dancing Script', cursive;
+}
+
+.show{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.progress-bar{
+  background-color : transparent;
+  height:20px;
+  width:100%;
+  border-radius:20px;
+  border: 1px solid #b15d0b;
+  position:relative;
+}
+
+.progress-bar::before{
+  content:"";
+  margin: 3px;
+  position:absolute;
+  z-index:10;
+  background:linear-gradient(to right, #faffa2 , #ff873f);
+  border-radius:inherit;
+  inset:0 calc(100% - var(--bar)) 0 0;
+}

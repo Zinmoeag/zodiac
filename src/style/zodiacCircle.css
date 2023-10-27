@@ -1,0 +1,54 @@
+.circle {
+  display: grid;
+  grid-template-areas: "layer";
+  place-items: center;
+  border-radius: 50%;
+  --radius: 32vmin;
+  width: calc(2 * var(--radius));
+  height: calc(2 * var(--radius));
+}
+
+.stat {
+  grid-area: layer;
+  width: 14vmin;
+  height: 14vmin;
+  border-radius: 50%;
+  place-items: center;
+  display: grid;
+  place-items: center;
+
+}
+
+.circle.active{
+  --radius: 32vmin;
+  --r-offset: -1.75turn;
+}
+
+.circle.active .stat{
+
+  /*Decimal value, 0-1 based on the child's index.*/
+  --d: calc(var(--i) / var(--total));
+  /*Offset to get better starting placement on the circle*/
+  --r-offset: 1.75turn;
+   /*Full circle*/
+  --r-amount: 1turn;
+   /*Rotation based on the decimal and r modifiers*/
+  
+  --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+    /*Rotate, transform out, then negative rotation so the content appears upright*/
+  --transform: rotate(var(--r)) translate(var(--radius))
+    rotate(calc(-1 * var(--r)));
+
+  transform: var(--transform);
+  transition: transform 3s ease-in-out;
+}
+
+
+/*.zodiac-text{
+  opacity: 0;
+}
+.circle.active ~ .zodiac-text{
+  opacity: 1;
+  transform: all 5s ease-in-out;
+}*/
+
