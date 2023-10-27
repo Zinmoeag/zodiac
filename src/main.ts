@@ -1,4 +1,4 @@
-console.clear();
+// console.clear();
 
 import './input.css'
 import {hero,zodiacTemplate} from './components/hero'
@@ -71,30 +71,33 @@ const dateError = document.querySelector("#date-error") as HTMLParagraphElement;
 
 const picker = new Pikaday({
     field: dateInput,
+    format: 'MM-DD-YYYY',
     yearRange: [1900, new Date().getFullYear()],
-    showYearDropdown: true,
     firstDay: 1,
 });
+
 
 dateSubmitBtn.addEventListener('click', (e:Event) =>{
   e.preventDefault()
   try{
-    const birthDate = new Date(dateInput.value);
+
+    const birthDate = picker.getDate()!;
+    picker.setDate(null);
     const HoroscopeObj = new Horoscope(birthDate)
     const zodiacSign = HoroscopeObj.getHoroscope();
     dateError.innerHTML = ""
 
     const userZodiacObj = getZodiac(ZodiacSignsDetail, zodiacSign)!;
     const chineseZodiacSign = HoroscopeObj.getChineseZodiac();
-    UserZodiac.render(userZodiacObj,{chineseZodiac : chineseZodiacSign})
-
-    showSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',    
-    });
-
+    if(UserZodiac.render(userZodiacObj,{chineseZodiac : chineseZodiacSign})){
+      showSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',    
+      });
+    }
 
   }catch{
     dateError.innerHTML = "Invalid Format"
+    UserZodiac.clearRender()
   }
 })

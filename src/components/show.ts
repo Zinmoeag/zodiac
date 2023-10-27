@@ -172,15 +172,23 @@ export class show {
 		return contentContainer;
 	}
 
+	clearRender(){
+		this.root.innerHTML = "";
+		this.root.classList.add("hidden");
+
+		return false;
+	}
+
 	render(userZodiac: zodiactype, chineseZodiac:{chineseZodiac: string | null}){
+			this.root.classList.remove("hidden");
 
-		this.root.classList.remove("hidden");
+			let zodiacObj = {
+				...userZodiac,
+				...chineseZodiac	
+			}
 
-		let zodiacObj = {
-			...userZodiac,
-			...chineseZodiac	
-		}
-		this.root.innerHTML = this.build(zodiacObj).outerHTML;
+			this.root.innerHTML = this.build(zodiacObj).outerHTML;
+			return true;
 	}
 
 }

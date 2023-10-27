@@ -8,7 +8,7 @@ export const sharmal: string = `
 					<input
 						name"zodiac"
 						id="date-input"
-						placeholder="mm-dd-yyyy"
+						placeholder="လ - ရက် - နှစ်"
 						type="text"
 						autocomplete="off"
 						class="md:w-full w-full h-full rounded-full outline-none px-4 text-white bg-transparent">
