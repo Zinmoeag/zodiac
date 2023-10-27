@@ -7,5 +7,5 @@ export default {
   // plugins: [/* add any plugins you need */],
   // ...other configuration options
 
-  base : "https://zinmoeag.gitlab.io/zodiac/"
+  base : "https://zinmoeag.github.io/zodiac/"
 }
