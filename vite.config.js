@@ -10,6 +10,6 @@ export default ({mode}) =>  {
         host : process.env.VITE_HOST,
         port : process.env.PORT || "",
       },
-      base : process.env.VITE_BASE,
+      base : "https://zinmoeag.github.io/zodiac/",
     });
 }
