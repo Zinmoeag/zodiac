@@ -9,6 +9,7 @@ export default ({mode}) =>  {
       server : {
         host : process.env.VITE_HOST,
         port : process.env.PORT || "",
-      }
+      },
+      base : process.env.VITE_BASE,
     });
 }
