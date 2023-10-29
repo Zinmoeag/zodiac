@@ -19,7 +19,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.d.ts"],
+  "include": ["src"],
   "filesGlob": [
         "./**/*.ts",
         "!./node_modules/**/*.ts"
