@@ -11,10 +11,10 @@ import {
 export class show {
 	private root: HTMLDivElement;
 	private element: elementType[] = [
-		{name: "Air", img:`${import.meta.env.VITE_BASE}/assets/images/elements/air.png`},
-		{name: "Earth", img:`${import.meta.env.VITE_BASE}/assets/images/elements/earth.png`},
-		{name: "Fire", img:`${import.meta.env.VITE_BASE}/assets/images/elements/fire.png`},
-		{name: "Water", img:`${import.meta.env.VITE_BASE}/assets/images/elements/water.png`},
+		{name: "Air", img:`./assets/images/elements/air.png`},
+		{name: "Earth", img:`./assets/images/elements/earth.png`},
+		{name: "Fire", img:`./assets/images/elements/fire.png`},
+		{name: "Water", img:`./assets/images/elements/water.png`},
 	]
 
 	constructor(root:HTMLDivElement){
@@ -69,7 +69,7 @@ export class show {
 	setInfoImage(imageSrc: string): HTMLDivElement{
 		let imgContainer = document.createElement("div");
 		let img = document.createElement("img");
-		img.src = `${import.meta.env.VITE_BASE}/assets/`+imageSrc
+		img.src = `./assets/`+imageSrc
 		imgContainer.append(img)
 
 		return imgContainer;
