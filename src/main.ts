@@ -1,5 +1,4 @@
 // console.clear();
-
 import './input.css'
 import {hero,zodiacTemplate} from './components/hero'
 import { sharmal } from './components/sharmal'
@@ -30,7 +29,7 @@ const circle = document.querySelector("#circle") as HTMLUListElement;
 
 //creating zodiac list into circle
 for(let i = 0; i < ZodiacSignsDetail.length; i++){
-  new zodiacTemplate(circle).render(i+1,`/assets/${ZodiacSignsDetail[i].ZodiacSignImageUrl}`, ZodiacSignsDetail[i].Name);
+  new zodiacTemplate(circle).render(i+1,`${import.meta.env.VITE_BASE}/assets/${ZodiacSignsDetail[i].ZodiacSignImageUrl}`, ZodiacSignsDetail[i].Name);
 }
 
 const stat = document.querySelectorAll(".stat") as NodeListOf<Element>;

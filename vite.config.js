@@ -1,11 +1,14 @@
-export default {
-  // Your Vite configuration options go here
-  // For example:
-  // build: {
-  //   outDir: 'dist', // Specify the output directory for production builds
-  // },
-  // plugins: [/* add any plugins you need */],
-  // ...other configuration options
+import { defineConfig, loadEnv } from 'vite';
+import dotenv from 'dotenv';
 
-  base : "https://zinmoeag.github.io/zodiac/"
+dotenv.config();
+
+export default ({mode}) =>  {
+
+    return defineConfig({
+      server : {
+        host : process.env.VITE_HOST,
+        port : process.env.PORT || "",
+      }
+    });
 }
